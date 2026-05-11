@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['HTML5', 'Canvas', 'JavaScript', 'WebGL'],
-    link: '/flight game/index.html',
+    link: '/fly game/index.html',
   },
   {
     id: 'kaspar-hauser',
@@ -34,8 +34,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    github: 'https://github.com',
-    demo: 'https://kaspar-hauser.vercel.app',
+    link: '/Kaspar hauser/index.html',
   },
   {
     id: 'glitch-game',
@@ -45,7 +44,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['Next.js', 'React', 'Node.js', 'Docker'],
-    demo: 'https://glitch-verbessert.vercel.app',
+    link: '/Glitch verbessert/index.html',
   },
   {
     id: 'portfolio-cv',
@@ -83,6 +82,7 @@ const PROJECTS: Project[] = [
     category: 'ai',
     status: 'completed',
     technologies: ['Claude API', 'React', 'Node.js', 'MongoDB'],
+    link: '/MOI bot/index.html',
   },
   {
     id: 'kaspar-tts',
