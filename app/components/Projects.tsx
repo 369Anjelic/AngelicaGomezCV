@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['HTML5', 'Canvas', 'JavaScript', 'WebGL'],
-    link: '/fly game/index.html',
+    link: '/fly%20game/index.html',
   },
   {
     id: 'kaspar-hauser',
@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: '/Kaspar hauser/kaspar-mittelalter-quest.html',
+    link: '/Kaspar%20hauser/kaspar-mittelalter-quest.html',
   },
   {
     id: 'glitch-game',
@@ -42,7 +42,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['Next.js', 'React', 'Node.js', 'Docker'],
-    link: '/Glitch verbessert/index.html',
+    link: '/Glitch%20verbessert/index.html',
   },
   {
     id: 'moi-bot',
@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
     category: 'ai',
     status: 'completed',
     technologies: ['Claude API', 'React', 'Node.js'],
-    link: '/MOI bot/index.html',
+    link: '/MOI%20bot/index.html',
   },
   {
     id: 'python-ubungen',
@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
     category: 'education',
     status: 'completed',
     technologies: ['Python', 'OOP', 'Algorithms'],
-    link: '/python coden übungen/index.html',
+    link: '/python%20coden%20%C3%BCbungen/index.html',
   },
   {
     id: 'umfrage',
