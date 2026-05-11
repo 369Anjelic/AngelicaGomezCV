@@ -7,7 +7,6 @@ export default function Header() {
         <span className="logo">🎨</span>
         <div className="logo-text">
           <h1>Angelica Gomez</h1>
-          <p>Full Stack Developer</p>
         </div>
       </div>
     </header>
