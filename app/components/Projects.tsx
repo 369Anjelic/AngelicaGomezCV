@@ -86,6 +86,7 @@ const CATEGORIES = [
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  // Force redeploy - only 6 active projects
 
   const filteredProjects = selectedCategory === 'all'
     ? PROJECTS
