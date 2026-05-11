@@ -10,16 +10,14 @@ interface Project {
   category: string;
   status: 'completed' | 'wip' | 'planning';
   technologies: string[];
-  link?: string;
-  github?: string;
-  demo?: string;
+  link: string;
 }
 
 const PROJECTS: Project[] = [
   {
-    id: 'flight-trainer',
+    id: 'fly-game',
     title: 'Flight Trainer - 2 Player',
-    description: 'Interaktiver Flight Simulator für Piloten-Training. Zwei Spieler können gemeinsam trainieren.',
+    description: 'Interaktiver Flight Simulator für Piloten-Training.',
     icon: '✈️',
     category: 'game',
     status: 'completed',
@@ -29,7 +27,7 @@ const PROJECTS: Project[] = [
   {
     id: 'kaspar-hauser',
     title: 'Kaspar Hauser Quest',
-    description: 'Interaktives Stadträtsel-Spiel über die Kaspar Hauser Geschichte mit mittelalterlichem Setting.',
+    description: 'Interaktives Stadträtsel-Spiel über die Kaspar Hauser Geschichte.',
     icon: '🎭',
     category: 'game',
     status: 'completed',
@@ -39,7 +37,7 @@ const PROJECTS: Project[] = [
   {
     id: 'glitch-game',
     title: 'Glitch verbessert',
-    description: 'Verbessertes Action-Game mit neuen Features, besserer Performance und erweiterten Levels.',
+    description: 'Verbessertes Action-Game mit neuen Features.',
     icon: '⚡',
     category: 'game',
     status: 'completed',
@@ -47,60 +45,43 @@ const PROJECTS: Project[] = [
     link: '/Glitch verbessert/index.html',
   },
   {
-    id: 'portfolio-cv',
-    title: 'Portfolio & CV',
-    description: 'Professionelle Portfolio-Website mit vollständigem CV und Projekt-Showcase.',
-    icon: '📄',
-    category: 'web',
-    status: 'completed',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://portfolio.example.com',
-  },
-  {
-    id: 'flight-mentor',
-    title: 'Flight Mentor Bot',
-    description: 'AI-basierter Pilot-Mentor mit Claude API Integration für BZF Training.',
-    icon: '🤖',
-    category: 'ai',
-    status: 'completed',
-    technologies: ['Claude API', 'Next.js', 'Node.js', 'WebSocket'],
-  },
-  {
-    id: 'nova-system',
-    title: 'NOVA 6.5.2026',
-    description: 'Vollständiges Learning Management System mit Portfolio und Community Features.',
-    icon: '🚀',
-    category: 'system',
-    status: 'completed',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Vercel'],
-  },
-  {
     id: 'moi-bot',
     title: 'MOI Bot',
-    description: 'Intelligenter Chatbot mit natürlicher Sprachverarbeitung und Context Management.',
+    description: 'Intelligenter Chatbot mit natürlicher Sprachverarbeitung.',
     icon: '💬',
     category: 'ai',
     status: 'completed',
-    technologies: ['Claude API', 'React', 'Node.js', 'MongoDB'],
+    technologies: ['Claude API', 'React', 'Node.js'],
     link: '/MOI bot/index.html',
   },
   {
-    id: 'kaspar-tts',
-    title: 'Kaspar Hauser TTS',
-    description: 'Text-to-Speech System mit Deepgram Integration für die Kaspar Hauser Stories.',
-    icon: '🎤',
-    category: 'ai',
+    id: 'python-ubungen',
+    title: 'Python Coding Übungen',
+    description: 'Sammlung von 20 Python-Programmierübungen.',
+    icon: '🐍',
+    category: 'education',
     status: 'completed',
-    technologies: ['Deepgram API', 'Node.js', 'Express', 'React'],
+    technologies: ['Python', 'OOP', 'Algorithms'],
+    link: '/python coden übungen/index.html',
+  },
+  {
+    id: 'umfrage',
+    title: 'Umfrage App',
+    description: 'Umfrage-Anwendung für Erfassung und Auswertung von Daten.',
+    icon: '📊',
+    category: 'web',
+    status: 'completed',
+    technologies: ['HTML5', 'JavaScript', 'CSS'],
+    link: '/umfrage/index.html',
   },
 ];
 
 const CATEGORIES = [
   { id: 'all', label: 'Alle Projekte' },
   { id: 'game', label: '🎮 Games' },
-  { id: 'web', label: '🌐 Web' },
   { id: 'ai', label: '🤖 AI/Bot' },
-  { id: 'system', label: '🚀 Systeme' },
+  { id: 'education', label: '📚 Bildung' },
+  { id: 'web', label: '🌐 Web' },
 ];
 
 export default function Projects() {
@@ -112,75 +93,105 @@ export default function Projects() {
 
   return (
     <section className="projects-section">
-      <div className="projects-header">
-        <h2>Alle Projekte</h2>
-        <p>Entdecke meine neuesten Arbeiten und laufenden Projekte</p>
-      </div>
-
-      <div className="filter-tabs">
+      <div className="category-filters">
         {CATEGORIES.map(cat => (
           <button
             key={cat.id}
-            className={`filter-btn ${selectedCategory === cat.id ? 'active' : ''}`}
             onClick={() => setSelectedCategory(cat.id)}
+            className={`category-btn ${selectedCategory === cat.id ? 'active' : ''}`}
+            style={{
+              padding: '8px 16px',
+              margin: '4px',
+              borderRadius: '4px',
+              background: selectedCategory === cat.id ? 'var(--primary)' : '#f0f0f0',
+              color: selectedCategory === cat.id ? 'white' : '#333',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: selectedCategory === cat.id ? 'bold' : 'normal',
+            }}
           >
             {cat.label}
           </button>
         ))}
       </div>
 
-      <div className="projects-grid">
-        {filteredProjects.map(project => (
-          <div key={project.id} className="project-card">
-            <div className="project-header">
-              <span className="project-icon">{project.icon}</span>
-              <span className={`project-status ${project.status}`}>
-                {project.status === 'completed' && '✓ Abgeschlossen'}
-                {project.status === 'wip' && '⚙️ In Bearbeitung'}
-                {project.status === 'planning' && '📋 Geplant'}
+      <div className="projects-grid" style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '24px',
+        marginTop: '32px',
+      }}>
+        {filteredProjects.map((project) => (
+          <article
+            key={project.id}
+            className="project-card"
+            style={{
+              border: '2px solid #3987b8',
+              borderRadius: '8px',
+              padding: '20px',
+              background: 'white',
+              cursor: 'pointer',
+            }}
+          >
+            <div style={{ marginBottom: '12px' }}>
+              <span style={{ fontSize: '32px' }}>{project.icon}</span>
+              <span
+                style={{
+                  marginLeft: '12px',
+                  padding: '4px 8px',
+                  background: '#3987b8',
+                  color: 'white',
+                  borderRadius: '4px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
+                }}
+              >
+                ✅ {project.status}
               </span>
             </div>
 
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+            <h3 style={{ fontSize: '18px', fontWeight: 'bold', margin: '12px 0' }}>
+              {project.title}
+            </h3>
+            <p style={{ color: '#666', marginBottom: '12px' }}>
+              {project.description}
+            </p>
 
-            <div className="project-meta">
-              {project.technologies.map(tech => (
-                <span key={tech} className="tech-tag">{tech}</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  style={{
+                    padding: '4px 8px',
+                    background: '#e8f1f8',
+                    color: '#3987b8',
+                    borderRadius: '4px',
+                    fontSize: '12px',
+                  }}
+                >
+                  {tech}
+                </span>
               ))}
             </div>
 
-            <div style={{ display: 'flex', gap: '10px', marginTop: 'auto' }}>
-              {project.link && (
-                <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
-                  Demo öffnen
-                </a>
-              )}
-              {project.demo && (
-                <a href={project.demo} className="project-link" target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                </a>
-              )}
-              {project.github && (
-                <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              )}
-              {!project.link && !project.demo && !project.github && (
-                <span style={{
-                  padding: '10px 20px',
-                  background: 'rgba(57, 135, 184, 0.1)',
-                  borderRadius: '6px',
-                  fontSize: '13px',
-                  color: 'var(--text-muted)',
-                  textAlign: 'center',
-                  width: '100%'
-                }}>
-                  Weitere Info verfügbar
-                </span>
-              )}
-            </div>
-          </div>
+            <a
+              href={project.link}
+              className="project-link"
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '12px',
+                background: '#3987b8',
+                color: 'white',
+                textAlign: 'center',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+              }}
+            >
+              🚀 Projekt öffnen
+            </a>
+          </article>
         ))}
       </div>
     </section>
