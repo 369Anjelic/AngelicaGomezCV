@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import FilterTabs from "./components/FilterTabs";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -10,12 +9,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <section className="projects-header">
-          <h2>Meine Projekte</h2>
-          <p>Entdecke alle aktuellen und zukünftigen Projekte</p>
-        </section>
-        <FilterTabs />
+        <Projects />
       </main>
       <Footer />
     </>

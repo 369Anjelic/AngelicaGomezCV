@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CV Von Angelica Gomez",
-  description: "Portfolio und CV von Angelica Gomez - Unwritten Studio",
+  title: "Portfolio - Angelica Gomez",
+  description: "Vollständiges Portfolio mit allen Projekten von Angelica Gomez - Full Stack Developer",
 };
 
 export default function RootLayout({

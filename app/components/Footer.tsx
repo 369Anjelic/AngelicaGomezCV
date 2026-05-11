@@ -3,10 +3,12 @@
 export default function Footer() {
   return (
     <footer>
-      <p>© 2026 Angelica Gomez | Unwritten Studio</p>
-      <p>Email: angelica.gomez@unwritten.studio</p>
-      <p style={{ marginTop: '15px' }}>
-        ✨ Built with Next.js + Claude AI
+      <p>© 2026 Angelica Gomez. Alle Rechte vorbehalten.</p>
+      <p>
+        Kontakt: <a href="mailto:angelica.gomez@unwritten.studio">angelica.gomez@unwritten.studio</a>
+      </p>
+      <p style={{ marginTop: '15px', fontSize: '12px' }}>
+        Designed with ❤️ und dem unwritten Styleguide
       </p>
     </footer>
   );
