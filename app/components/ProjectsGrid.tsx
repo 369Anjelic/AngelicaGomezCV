@@ -138,25 +138,24 @@ export default function ProjectsGrid({ filter = 'all' }: { filter?: string }) {
                 ))}
               </div>
 
-              {project.url ? (
-                <a
-                  href={project.url}
-                  className="project-link"
-                  style={{
-                    background: 'var(--primary)',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                    width: '100%',
-                    display: 'block',
-                    padding: '10px',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                  }}
-                >
-                  🚀 Projekt öffnen
-                </a>
-              ) : (
+              <a
+                href={`/projects/${project.id}`}
+                className="project-link"
+                style={{
+                  background: 'var(--primary)',
+                  color: 'white',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  display: 'block',
+                  padding: '10px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                }}
+              >
+                🚀 Details anschauen
+              </a>
+              {!project.url && (
                 <button
                   onClick={() => toggleExpand(project.id)}
                   className="project-link"
