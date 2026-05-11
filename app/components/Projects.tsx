@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
     category: 'game',
     status: 'completed',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: '/Kaspar hauser/index.html',
+    link: '/Kaspar hauser/kaspar-mittelalter-quest.html',
   },
   {
     id: 'glitch-game',
